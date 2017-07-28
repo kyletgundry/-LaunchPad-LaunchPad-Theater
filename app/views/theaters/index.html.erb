@@ -3,6 +3,6 @@
 <a href="/theaters/new" class="btn btn-default">Add Theater</a>
 
 <% @theaters.each do |theater| %>
-  <h3><%= theater.name %></h3>
+  <h3><a href="/theaters/<%= theater.id %>"><%= theater.name %></a></h3>
   <h5><%= theater.seats %></h5>
 <% end %>

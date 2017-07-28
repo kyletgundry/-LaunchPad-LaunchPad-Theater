@@ -16,4 +16,9 @@ class TheatersController < ApplicationController
       )
     redirect_to "/"
   end
+
+  def show
+    @theater = Theater.find_by(id: params[:id])
+    render "show.html.erb"
+  end
 end
