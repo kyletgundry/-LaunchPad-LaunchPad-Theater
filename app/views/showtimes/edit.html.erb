@@ -2,19 +2,17 @@
 
 <div><a href="/showtimes" class="btn btn-default">Cancel</a></div>
 <br>
+<h3>Movie:  <%= @showtime.movie.name %></h3>
+<h3>Theater:  <%= @showtime.theater.name %></h3>
 
 <%= form_tag "/showtimes/#{@showtime.id}", method: :patch do %>
   <div>
-    <label for="movie_id">Movie:</label>
-    <input type="text" name="movie_id" value="<%= @showtime.movie_id %>">
+    <label for="date">Date:</label>
+    <input type="date" name="date" value="<%= @showtime.date %>">
   </div>
   <div>
-    <label for="theater_id">Theater:</label>
-    <input type="text" name="theater_id" value="<%= @showtime.theater_id %>">
-  </div>
-  <div>
-    <label for="showtime">Showtime:</label>
-    <input type="date" name="showtime" value="<%= @showtime.showtime %>">
+    <label for="time">Time:</label>
+    <input type="time" name="time" value="<%= @showtime.time %>">
   </div>
   <br>
   <div>

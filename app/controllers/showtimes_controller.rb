@@ -13,7 +13,8 @@ class ShowtimesController < ApplicationController
     @showtime = Showtime.create(
       theater_id: params[:theater_id],
       movie_id: params[:movie_id],
-      showtime: params[:showtime]
+      date: params[:date],
+      time: params[:time]
       )
     redirect_to "/showtimes"
   end
@@ -33,7 +34,8 @@ class ShowtimesController < ApplicationController
     @showtime.update(
       theater_id: params[:theater_id],
       movie_id: params[:movie_id],
-      showtime: params[:showtime]
+      date: params[:date],
+      time: params[:time]
       )
     @showtime.save
     redirect_to "/showtimes"

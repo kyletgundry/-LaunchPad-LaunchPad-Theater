@@ -3,7 +3,12 @@
 <a href="/showtimes/new" class="btn btn-default">Add Showtime</a>
 
 <% @showtimes.each do |showtime| %>
-  <div><h3><a  style="float: left; padding-left: 50px; padding-right: 25px;" href="/showtimes/<%= showtime.id %>"><%= showtime.movie_id %></a></h3></div>
+  <div><h3><a href="/showtimes/<%= showtime.id %>"><%= showtime.movie.name %></a></h3></div>
+
+  <div><h3><%= showtime.theater.name %></h3></div>
+  <div><h3><%= showtime.date %></h3></div>
+  <div><h3><%= showtime.time %></h3></div>
+
 
   <div>
     <%= form_tag "/showtimes/#{showtime.id}", method: :delete do %>
