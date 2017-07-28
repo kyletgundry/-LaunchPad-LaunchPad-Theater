@@ -32,8 +32,6 @@ class ShowtimesController < ApplicationController
   def update
     @showtime = Showtime.find_by(id: params[:id])
     @showtime.update(
-      theater_id: params[:theater_id],
-      movie_id: params[:movie_id],
       date: params[:date],
       time: params[:time]
       )
