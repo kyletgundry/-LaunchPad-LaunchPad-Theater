@@ -1,0 +1,15 @@
+<h1>Create New Theater:</h1>
+
+<%= form_tag "/theaters", method: :post do %>
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" name="name">
+  </div>
+  <div>
+    <label for="seats">Seats:</label>
+    <input type="integer" name="seats">
+  </div>
+  <div>
+    <input type="submit" value="Add Theater">
+  </div>
+<% end %>
