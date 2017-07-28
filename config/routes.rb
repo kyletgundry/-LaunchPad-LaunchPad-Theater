@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "/theaters/:id" => "theaters#show"
   get "/theaters/:id/edit" => "theaters#edit"
   patch "/theaters/:id" => "theaters#update"
+  delete "/theaters/:id" => "theaters#destroy"
 end

@@ -36,4 +36,10 @@ class TheatersController < ApplicationController
     @theater.save
     redirect_to "/"
   end
+
+  def destroy
+    @theater = Theater.find_by(id: params[:id])
+    @theater.destroy
+    redirect_to "/"
+  end
 end
