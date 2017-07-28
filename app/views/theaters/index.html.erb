@@ -3,12 +3,14 @@
 <a href="/theaters/new" class="btn btn-default">Add Theater</a>
 
 <% @theaters.each do |theater| %>
-  <span><h3><a href="/theaters/<%= theater.id %>"><%= theater.name %></a></h3></span>
-  <span><h5><%= theater.seats %></h5></span>
-  <span>
+  <div><h3><a  style="float: left; padding-left: 50px;" href="/theaters/<%= theater.id %>"><%= theater.name %></a></h3></div>
+  <div><h5 style="float: left; padding-left: 25px; padding-right: 25px;">Seats: <%= theater.seats %></h5></div>
+  <div>
     <%= form_tag "/theaters/#{theater.id}", method: :delete do %>
+      <div>
       <input type="submit" value="X">
+      </div>
     <% end %>
-  </span>
+  </div>
 <% end %>
 
