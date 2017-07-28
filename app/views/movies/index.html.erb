@@ -1,0 +1,16 @@
+<h1>Welcome to LaunchPad Theater!</h1>
+
+<a href="/movies/new" class="btn btn-default">Add Movie</a>
+
+<% @movies.each do |movie| %>
+  <div><h3><a  style="float: left; padding-left: 50px; padding-right: 25px;" href="/movies/<%= movie.id %>"><%= movie.name %></a></h3></div>
+
+  <div>
+    <%= form_tag "/movies/#{movie.id}", method: :delete do %>
+      <div>
+      <input type="submit" value="Remove Movie">
+      </div>
+    <% end %>
+  </div>
+<% end %>
+

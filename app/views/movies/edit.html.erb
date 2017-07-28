@@ -1,0 +1,16 @@
+<h1>Edit Movie</h1>
+
+<div><a href="/movies" class="btn btn-default">Cancel</a></div>
+<br>
+
+<%= form_tag "/movies/#{@movie.id}", method: :patch do %>
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="<%= @movie.name %>">
+  </div>
+  <br>
+  <div>
+    <input type="submit" value="Update Movie">
+  </div>
+<% end %>
+
