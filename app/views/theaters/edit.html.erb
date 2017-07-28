@@ -1,0 +1,20 @@
+<h1>Edit Theater</h1>
+
+<div><a href="/" class="btn btn-default">Cancel</a></div>
+<br>
+
+<%= form_tag "/theaters/#{@theater.id}", method: :patch do %>
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="<%= @theater.name %>">
+  </div>
+  <div>
+    <label for="seats">Seats:</label>
+    <input type="integer" name="seats" value="<%= @theater.seats %>">
+  </div>
+  <br>
+  <div>
+    <input type="submit" value="Update Theater">
+  </div>
+<% end %>
+

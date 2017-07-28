@@ -21,4 +21,19 @@ class TheatersController < ApplicationController
     @theater = Theater.find_by(id: params[:id])
     render "show.html.erb"
   end
+
+  def edit
+    @theater = Theater.find_by(id: params[:id])
+    render "edit.html.erb"
+  end
+
+  def update
+    @theater = Theater.find_by(id: params[:id])
+    @theater.update(
+      name: params[:name],
+      seats: params[:seats]
+      )
+    @theater.save
+    redirect_to "/"
+  end
 end
