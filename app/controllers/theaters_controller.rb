@@ -14,7 +14,7 @@ class TheatersController < ApplicationController
       name: params[:name],
       seats: params[:seats]
       )
-    redirect_to "/"
+    redirect_to "/theaters"
   end
 
   def show
@@ -34,12 +34,12 @@ class TheatersController < ApplicationController
       seats: params[:seats]
       )
     @theater.save
-    redirect_to "/"
+    redirect_to "/theaters"
   end
 
   def destroy
     @theater = Theater.find_by(id: params[:id])
     @theater.destroy
-    redirect_to "/"
+    redirect_to "/theaters"
   end
 end

@@ -1,0 +1,24 @@
+<h1>Edit Showtime</h1>
+
+<div><a href="/showtimes" class="btn btn-default">Cancel</a></div>
+<br>
+
+<%= form_tag "/showtimes/#{@showtime.id}", method: :patch do %>
+  <div>
+    <label for="movie_id">Movie:</label>
+    <input type="text" name="movie_id" value="<%= @showtime.movie_id %>">
+  </div>
+  <div>
+    <label for="theater_id">Theater:</label>
+    <input type="text" name="theater_id" value="<%= @showtime.theater_id %>">
+  </div>
+  <div>
+    <label for="showtime">Showtime:</label>
+    <input type="date" name="showtime" value="<%= @showtime.showtime %>">
+  </div>
+  <br>
+  <div>
+    <input type="submit" value="Update Showtime">
+  </div>
+<% end %>
+

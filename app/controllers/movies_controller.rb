@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
     @movie = Movie.create(
       name: params[:name]
       )
-    redirect_to "/"
+    redirect_to "/movies"
   end
 
   def show
@@ -32,12 +32,12 @@ class MoviesController < ApplicationController
       name: params[:name]
       )
     @movie.save
-    redirect_to "/"
+    redirect_to "/movies"
   end
 
   def destroy
     @movie = Movie.find_by(id: params[:id])
     @movie.destroy
-    redirect_to "/"
+    redirect_to "/movies"
   end
 end

@@ -1,0 +1,16 @@
+<h1>Showtimes:</h1>
+
+<a href="/showtimes/new" class="btn btn-default">Add Showtime</a>
+
+<% @showtimes.each do |showtime| %>
+  <div><h3><a  style="float: left; padding-left: 50px; padding-right: 25px;" href="/showtimes/<%= showtime.id %>"><%= showtime.movie_id %></a></h3></div>
+
+  <div>
+    <%= form_tag "/showtimes/#{showtime.id}", method: :delete do %>
+      <div>
+      <input type="submit" value="Remove Showtime">
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
