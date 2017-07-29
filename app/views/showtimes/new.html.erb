@@ -1,9 +1,12 @@
 <h1>Create New Showtime:</h1>
 
-<a href="/showtimes" class="btn btn-default">Cancel</a>
+<a href="/movies" class="btn btn-default">Cancel</a>
 
 
 <%= form_tag "/showtimes", method: :post do %>
+  <div>
+    <input type="hidden" name="movie_id" value="<% @showtime.movie_id %>">
+  </div>
   <div>
     <label for="date">Date:</label>
     <input type="date" name="date">

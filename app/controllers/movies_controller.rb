@@ -5,12 +5,16 @@ class MoviesController < ApplicationController
   end 
 
   def new
+    @theaters = Theater.all
     @movie = Movie.new
     render "new.html.erb"
   end
 
   def create
+    theater_name = params[:theater_name]
+    theater = Theater.find_by(name: theater_name)
     @movie = Movie.create(
+      theater_id: theater.id,
       name: params[:name]
       )
     redirect_to "/movies"

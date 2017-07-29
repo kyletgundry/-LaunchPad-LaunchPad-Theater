@@ -10,13 +10,15 @@
       <div class="well">
         <div><h3><a href="/movies/<%= movie.id %>"><%= movie.name %></a></h3></div>
         <div><h5>Theater: <%= movie.theater.name %></h5></div>
-        <div>
-          <%= form_tag "/movies/#{movie.id}", method: :delete do %>
-            <div>
-            <input type="submit" value="Remove Movie">
-            </div>
-          <% end %>
-        </div>
+        <% movie.showtimes.each do |showtime| %>
+          <h5>Showtime: <%= showtime.date %>  <%= showtime.time %></h5>
+        <% end %>
+        <div style="float: left; padding-right: 10px;"><a href="/showtimes/new" class="btn btn-default">Add Showtime</a></div>
+        <%= form_tag "/movies/#{movie.id}", method: :delete do %>
+          <div>
+          <input type="submit" value="Remove Movie" class="btn btn-default">
+          </div>
+        <% end %>
       </div>
     </div>
   <% end %>

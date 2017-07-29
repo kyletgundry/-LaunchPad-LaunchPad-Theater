@@ -8,6 +8,11 @@
     <label for="name">Name:</label>
     <input type="text" name="name">
   </div>
+  <select name="theater_name">
+    <% @theaters.each do |theater| %>
+      <option><%= theater.name %></option>
+    <% end %>
+  </select>
   <div>
     <input type="submit" value="Add Movie">
   </div>
