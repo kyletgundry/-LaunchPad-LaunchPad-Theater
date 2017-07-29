@@ -5,7 +5,6 @@
 <% @showtimes.each do |showtime| %>
   <div><h3>Movie: <a href="/showtimes/<%= showtime.id %>"><%= showtime.movie.name %></a></h3></div>
 
-  <div><h3>Theater: <%= showtime.theater.name %></h3></div>
   <div><h3>Date: <%= showtime.date %></h3></div>
   <div><h3>Time: <%= showtime.time %></h3></div>
 

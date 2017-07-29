@@ -11,7 +11,6 @@ class ShowtimesController < ApplicationController
 
   def create
     @showtime = Showtime.create(
-      theater_id: params[:theater_id],
       movie_id: params[:movie_id],
       date: params[:date],
       time: params[:time]

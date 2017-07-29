@@ -3,7 +3,6 @@
 <div><a href="/showtimes" class="btn btn-default">Cancel</a></div>
 <br>
 <h3>Movie:  <%= @showtime.movie.name %></h3>
-<h3>Theater:  <%= @showtime.theater.name %></h3>
 
 <%= form_tag "/showtimes/#{@showtime.id}", method: :patch do %>
   <div>

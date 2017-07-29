@@ -1,6 +1,7 @@
 <h1>Welcome to LaunchPad Theater!</h1>
 
-<a href="/theaters/new" class="btn btn-default">Add Theater</a>
+<div style="float: left; padding-right: 50px;"><a href="/theaters/new" class="btn btn-default">Add Theater</a></div>
+<div><a href="/movies" class="btn btn-default">All Movies</a></div>
 
 <% @theaters.each do |theater| %>
   <div><h3><a  style="float: left; padding-left: 50px;" href="/theaters/<%= theater.id %>"><%= theater.name %></a></h3></div>
