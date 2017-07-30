@@ -33,13 +33,17 @@ class MoviesController < ApplicationController
   def edit
     @theaters = Theater.all
     @movie = Movie.find_by(id: params[:id])
-    
+
     render "edit.html.erb"
   end
 
   def update
     theater = Theater.find_by(name: params[:theater_name])
     @movie = Movie.find_by(id: params[:id])
+    # @showtimes = Showtime.where(movie_id: @movie)
+    # @showtimes.update(
+    #   seats_available: @movie.theater.seats
+    #   )
     @movie.update(
       theater_id: theater.id,
       name: params[:name]

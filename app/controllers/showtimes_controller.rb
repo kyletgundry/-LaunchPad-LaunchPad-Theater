@@ -30,6 +30,11 @@ class ShowtimesController < ApplicationController
     render "show.html.erb"
   end
 
+  def buy
+    @showtime = Showtime.find_by(id: params[:id])
+    render "buy.html.erb"
+  end
+
   def edit
     @showtime = Showtime.find_by(id: params[:id])
     render "edit.html.erb"

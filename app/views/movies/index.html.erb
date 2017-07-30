@@ -14,7 +14,11 @@
         <% movie.showtimes.each do |showtime| %>
           <h5>Showtime: <%= showtime.date %>  <%= showtime.time %></h5>
           <h5>Seats Available: <%= showtime.seats_available %></h5>
-          <a href="/">Buy Ticket</a>
+          <% if showtime.seats_available > 0 %>
+            <a href="/showtimes/<%= showtime.id %>/buy">Buy Ticket</a>
+          <% else %>
+            <h4>Sold Out!</h4>
+          <% end %>
           <h6>_________________</h6>
         <% end %>
         <%= form_tag "/movies/#{movie.id}", method: :delete do %>

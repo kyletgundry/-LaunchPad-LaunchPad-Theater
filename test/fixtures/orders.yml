@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_name: MyString
+  user_email: MyString
+  user_credit_card: 1
+  user_expiration_date: 1
+  showtime_id: 1
+
+two:
+  user_name: MyString
+  user_email: MyString
+  user_credit_card: 1
+  user_expiration_date: 1
+  showtime_id: 1

@@ -1,0 +1,35 @@
+<h1>Order Movie Ticket</h1>
+
+<h5>Movie: <%= @showtime.movie.name %></h5>
+<h5>Date: <%= @showtime.date %></h5>
+<h5>Time: <%= @showtime.time %></h5>
+
+<h3>Buy Ticket:</h3>
+
+<%= form_tag "/orders/create", method: :post do %>
+  <div>
+    <label for="user_name">Name: </label>
+    <input type="text" name="user_name">
+  </div>
+  <div>
+    <label for="user_email">Email: </label>
+    <input type="email" name="user_email">
+  </div>
+  <div>
+    <label for="user_credit_card">Credit Card Number:  </label>
+    <input type="text" name="user_credit_card">
+  </div>
+  <div>
+    <label for="user_expiration_date">Credit Card Expiration Date:  </label>
+    <input type="text" name="user_expiration_date">
+  </div>
+  <div>
+    <input type="text" name="showtime_id" value="<%= @showtime.id %>">
+  </div>
+  <br>
+  <div>
+    <input type="submit" value="Buy Ticket">
+  </div>
+<% end %>
+
+
