@@ -1,7 +1,7 @@
 <h1>Welcome to LaunchPad Theater!</h1>
 
 <div style="float: left; padding-right: 50px;"><a href="/movies/new" class="btn btn-default">Add Movie</a></div>
-<div><a href="/theaters/new" class="btn btn-default">Add Theater</a></div>
+<div style="padding-right: 50px;"><a href="/theaters" class="btn btn-default">Theaters</a></div>
 
 <br>
 <div class="row">
@@ -13,7 +13,7 @@
           <h6>_________________</h6>
         <% movie.showtimes.each do |showtime| %>
           <h5>Showtime: <%= showtime.date %>  <%= showtime.time %></h5>
-          <h5>Seats Available: <%= movie.theater.seats %></h5>
+          <h5>Seats Available: <%= showtime.seats_available %></h5>
           <a href="/">Buy Ticket</a>
           <h6>_________________</h6>
         <% end %>

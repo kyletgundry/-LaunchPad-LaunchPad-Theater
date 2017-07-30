@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   post "/showtimes" => "showtimes#create"
   get "/showtimes/:id" => "showtimes#show"
   get "/showtimes/:id/edit" => "showtimes#edit"
-  get "/showtimes/:id/edit" => "showtimes#edit"
   patch "/showtimes/:id" => "showtimes#update"
   delete "/showtimes/:id" => "showtimes#destroy"
 end

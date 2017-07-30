@@ -11,10 +11,16 @@ class ShowtimesController < ApplicationController
   end
 
   def create
+    seats_available = params[:seats_available]
+    seats = seats_available.to_i
+    movie_id = params[:movie_id]
+    movie = movie_id.to_i
+
     @showtime = Showtime.create(
-      movie_id: params[:movie_id],
+      movie_id: movie,
       date: params[:date],
-      time: params[:time]
+      time: params[:time],
+      seats_available: seats
       )
     redirect_to "/movies"
   end
@@ -32,6 +38,8 @@ class ShowtimesController < ApplicationController
   def update
     @showtime = Showtime.find_by(id: params[:id])
     @showtime.update(
+      movie_id: params[:movie_id],
+      seats_available: params[:seats_available],
       date: params[:date],
       time: params[:time]
       )

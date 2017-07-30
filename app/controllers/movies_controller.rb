@@ -33,6 +33,7 @@ class MoviesController < ApplicationController
   def edit
     @theaters = Theater.all
     @movie = Movie.find_by(id: params[:id])
+    
     render "edit.html.erb"
   end
 

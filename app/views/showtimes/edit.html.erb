@@ -6,6 +6,12 @@
 
 <%= form_tag "/showtimes/#{@showtime.id}", method: :patch do %>
   <div>
+    <input type="integer" name="movie_id" value="<%= @showtime.movie_id %>">
+  </div>
+    <div>
+    <input type="integer" name="seats_available" value="<%= @showtime.seats_available %>">
+  </div>
+  <div>
     <label for="date">Date:</label>
     <input type="date" name="date" value="<%= @showtime.date %>">
   </div>
