@@ -5,7 +5,7 @@
 
 <%= form_tag "/showtimes", method: :post do %>
   <div>
-    <input type="hidden" name="movie_id" value="<% @showtime.movie_id %>">
+    <input type="hidden" name="movie_id" value="<% @movie.id %>">
   </div>
   <div>
     <label for="date">Date:</label>

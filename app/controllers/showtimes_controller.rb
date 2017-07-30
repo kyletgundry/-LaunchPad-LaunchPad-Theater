@@ -5,6 +5,7 @@ class ShowtimesController < ApplicationController
   end 
 
   def new
+    @movie = Movie.all
     @showtime = Showtime.new
     render "new.html.erb"
   end
@@ -15,7 +16,7 @@ class ShowtimesController < ApplicationController
       date: params[:date],
       time: params[:time]
       )
-    redirect_to "/showtimes"
+    redirect_to "/movies"
   end
 
   def show
@@ -41,6 +42,6 @@ class ShowtimesController < ApplicationController
   def destroy
     @showtime = Showtime.find_by(id: params[:id])
     @showtime.destroy
-    redirect_to "/showtimes"
+    redirect_to "/movies"
   end
 end

@@ -25,6 +25,11 @@ class MoviesController < ApplicationController
     render "show.html.erb"
   end
 
+  def showtime
+    @movie = Movie.find_by(id: params[:id])
+    render "showtimenew.html.erb"
+  end
+
   def edit
     @movie = Movie.find_by(id: params[:id])
     render "edit.html.erb"

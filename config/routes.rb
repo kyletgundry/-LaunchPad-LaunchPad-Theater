@@ -15,11 +15,13 @@ Rails.application.routes.draw do
   patch "/movies/:id" => "movies#update"
   delete "/movies/:id" => "movies#destroy"
 
+
   get "/showtimes" => "showtimes#index"
   get "/showtimes/new" => "showtimes#new"
   post "/showtimes" => "showtimes#create"
   get "/showtimes/:id" => "showtimes#show"
   get "/showtimes/:id/edit" => "showtimes#edit"
+  get "/showtimes/:id/edit" => "showtimes#edit"
   patch "/showtimes/:id" => "showtimes#update"
-  delete "/movies/:id" => "movies#destroy"
+  delete "/showtimes/:id" => "showtimes#destroy"
 end

@@ -13,7 +13,6 @@
         <% movie.showtimes.each do |showtime| %>
           <h5>Showtime: <%= showtime.date %>  <%= showtime.time %></h5>
         <% end %>
-        <div style="float: left; padding-right: 10px;"><a href="/showtimes/new" class="btn btn-default">Add Showtime</a></div>
         <%= form_tag "/movies/#{movie.id}", method: :delete do %>
           <div>
           <input type="submit" value="Remove Movie" class="btn btn-default">

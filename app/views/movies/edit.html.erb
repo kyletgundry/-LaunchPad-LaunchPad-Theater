@@ -14,3 +14,23 @@
   </div>
 <% end %>
 
+<h1>Add Showtime:</h1>
+
+<%= form_tag "/showtimes", method: :post do %>
+  <div>
+    <input type="hidden" name="movie_id" value="<%= @movie.id %>">
+  </div>
+  <div>
+    <label for="date">Date:</label>
+    <input type="date" name="date">
+  </div>
+  <div>
+    <label for="time">Time:</label>
+    <input type="time" name="time">
+  </div>
+  <br>
+  <div>
+    <input type="submit" value="Add Showtime">
+  </div>
+<% end %>
+
