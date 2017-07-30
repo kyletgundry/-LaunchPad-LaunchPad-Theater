@@ -10,8 +10,12 @@
       <div class="well">
         <div><h3><a href="/movies/<%= movie.id %>"><%= movie.name %></a></h3></div>
         <div><h5>Theater: <%= movie.theater.name %></h5></div>
+          <h6>_________________</h6>
         <% movie.showtimes.each do |showtime| %>
           <h5>Showtime: <%= showtime.date %>  <%= showtime.time %></h5>
+          <h5>Seats Available: <%= movie.theater.seats %></h5>
+          <a href="/">Buy Ticket</a>
+          <h6>_________________</h6>
         <% end %>
         <%= form_tag "/movies/#{movie.id}", method: :delete do %>
           <div>
