@@ -8,9 +8,13 @@
 <h3>Name: <%= @movie.name %></h3>
 <% @movie.showtimes.each do |showtime| %>
   <h5>Date: <%= showtime.date %>    Time: <%= showtime.time %></h5>
+  <a href="/showtimes/<%= showtime.id %>/edit" class="btn btn-default">Edit Showtime</a>
+
   <%= form_tag "/showtimes/#{showtime.id}/", method: :delete do %>
     <div>
       <input type="submit" value="Remove Showtime" class="btn btn-default">
     </div>
   <% end %>
 <% end %>
+
+

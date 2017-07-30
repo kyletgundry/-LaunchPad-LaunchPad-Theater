@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
 
   get "/showtimes" => "showtimes#index"
-  get "/showtimes/new" => "showtimes#new"
   post "/showtimes" => "showtimes#create"
   get "/showtimes/:id" => "showtimes#show"
   get "/showtimes/:id/edit" => "showtimes#edit"

@@ -36,7 +36,7 @@ class ShowtimesController < ApplicationController
       time: params[:time]
       )
     @showtime.save
-    redirect_to "/showtimes"
+    redirect_to "/movies"
   end
 
   def destroy
