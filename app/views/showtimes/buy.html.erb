@@ -1,3 +1,16 @@
+
+<% if @order.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+ 
+    <ul>
+    <% @order.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h1>Order Movie Ticket</h1>
 
 <h5>Movie: <%= @showtime.movie.name %></h5>
@@ -6,10 +19,10 @@
 
 <h3>Buy Ticket:</h3>
 
-<%= form_tag "/orders/create", method: :post do %>
+<%= form_tag "/showtimes/#{@showtime.id}/order", method: :post do %>
   <div>
     <label for="user_name">Name: </label>
-    <input type="text" name="user_name">
+    <input type="text" name="user_name" value="<%= @order.user_name %>">
   </div>
   <div>
     <label for="user_email">Email: </label>
@@ -24,7 +37,7 @@
     <input type="text" name="user_expiration_date">
   </div>
   <div>
-    <input type="text" name="showtime_id" value="<%= @showtime.id %>">
+    <input type="hidden" name="showtime_id" value="<%= @showtime.id %>">
   </div>
   <br>
   <div>

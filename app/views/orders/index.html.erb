@@ -1,0 +1,18 @@
+<h1>All Orders: </h1>
+
+<div><h3>Number of Orders: <%= @orders.length %></h3></div>
+<br>
+<div>
+  <ol>
+    <% @orders.each do |order| %>
+      <li>
+        <h6>Name: <%= order.user_name %></h6>
+        <h6>Email: <%= order.user_email %></h6>
+        <h6>Movie Name: <%= order.showtime.movie.name %></h6>
+        <p>_______________</p>
+      </li>
+    <% end %>
+  </ol>
+</div>
+
+

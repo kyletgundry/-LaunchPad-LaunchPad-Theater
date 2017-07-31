@@ -2,8 +2,6 @@ class OrdersController < ApplicationController
 
   def create
     @showtime = Showtime.find_by(id: params[:showtime_id])
-    puts "This is the showtime:   " + @showtime.to_s
-    puts "This is the available seats:  " + @showtime.seats_available.to_s
     @order = Order.new(
       user_name: params[:user_name],
       user_email: params[:user_email],
@@ -12,13 +10,18 @@ class OrdersController < ApplicationController
       showtime_id: params[:showtime_id],
       )
     if @order.save
-      @showtime = Showtime.find_by(id: params[:showtime_id])
       new_seats_available = @showtime.seats_available - 1
       @showtime.update(
         seats_available: new_seats_available
         )
+      redirect_to "/movies"
+    else
+      render "showtimes/buy.html.erb"
     end
-    redirect_to "/movies"
   end
 
+  def index
+    @orders = Order.all
+    render "index.html.erb"
+  end
 end

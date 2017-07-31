@@ -1,4 +1,5 @@
 class ShowtimesController < ApplicationController
+  
   def index
     @showtimes = Showtime.all
     render "index.html.erb"
@@ -31,6 +32,7 @@ class ShowtimesController < ApplicationController
   end
 
   def buy
+    @order = Order.new
     @showtime = Showtime.find_by(id: params[:id])
     render "buy.html.erb"
   end

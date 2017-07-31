@@ -21,10 +21,13 @@ Rails.application.routes.draw do
   post "/showtimes" => "showtimes#create"
   get "/showtimes/:id" => "showtimes#show"
   get "/showtimes/:id/buy" => "showtimes#buy"
+  get "/showtimes/:id/order" => "orders#create"
+  post "/showtimes/:id/order" => "orders#create"
   get "/showtimes/:id/edit" => "showtimes#edit"
   patch "/showtimes/:id" => "showtimes#update"
   delete "/showtimes/:id" => "showtimes#destroy"
   
-  post "orders/create" => "orders#create"
-  
+  get "/orders" => "orders#index"
+  post "/orders/create" => "orders#create"
+
 end
