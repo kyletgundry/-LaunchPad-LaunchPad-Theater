@@ -1,0 +1,18 @@
+<h1>Movie Orders: </h1>
+
+<a href="/movies" class="btn btn-default">Home</a>
+
+<div><h3>Movie: <%= @movie.name %></h3></div>
+<div><h3>Number of Orders: <%= @movie.orders.length %></h3></div>
+<br>
+<div>
+  <ol>
+    <% @movie.orders.each do |order| %>
+      <li>
+        <h6>Name: <%= order.user_name %></h6>
+        <h6>Email: <%= order.user_email %></h6>
+        <p>_______________</p>
+      </li>
+    <% end %>
+  </ol>
+</div>

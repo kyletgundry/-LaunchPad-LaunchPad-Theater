@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/movies/:id/edit" => "movies#edit"
   patch "/movies/:id" => "movies#update"
   delete "/movies/:id" => "movies#destroy"
+  get "/movies/:id/orders" => "movies#orders"
 
 
   get "/showtimes" => "showtimes#index"
@@ -29,5 +30,6 @@ Rails.application.routes.draw do
   
   get "/orders" => "orders#index"
   post "/orders/create" => "orders#create"
+
 
 end

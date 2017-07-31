@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :showtime
+  belongs_to :movie
 
   validates :user_name, presence: true
   validates :user_email, presence: true

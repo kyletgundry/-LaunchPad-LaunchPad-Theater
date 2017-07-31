@@ -57,4 +57,10 @@ class MoviesController < ApplicationController
     @movie.destroy
     redirect_to "/movies"
   end
+
+  def orders
+    @movie = Movie.find_by(id: params[:id])
+    render "orders.html.erb"
+  end
+
 end
