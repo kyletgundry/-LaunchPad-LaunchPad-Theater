@@ -12,7 +12,7 @@
         <div><h5>Theater: <%= movie.theater.name %></h5></div>
           <h6>_________________</h6>
         <% movie.showtimes.each do |showtime| %>
-          <h5>Showtime: <%= showtime.date %>  <%= showtime.time %></h5>
+          <h5>Showtime: <%= showtime.date %>.strftime("%A, %b %d")  <%= showtime.time %></h5>
           <h5>Seats Available: <%= showtime.seats_available %></h5>
           <% if showtime.seats_available > 0 %>
             <a href="/showtimes/<%= showtime.id %>/buy">Buy Ticket</a>

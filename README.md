@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This app was built with the focus of making it as realistic as possible.  When reading about the features expected I started building out the tables and figuring out the associations.  Once I got the tables and associations in place I started building the app, creating a MVP.  I started by getting some data in the db with the tables I started off with which were the movies, and theaters. Once added, I displayed the data for both tables to their corresponding views.  From there I moved on to the showtime table and displaying each showtime created thats relevant to its corresponding movie.  After getting each of those tables to display their data properly I moved on to creating the order table to purchase the ticket.  I built the model to take in the user information and reduce the seats available by 1.   To finish the app I integrated the email notification through Sendgrid which sends a simple text email to the corresponding user email from the order confirming the purchase.  Once all data was displaying the way I intended I added some updates to the front end to make the app feel clean.
