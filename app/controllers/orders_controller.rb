@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
         seats_available: new_seats_available
         )
       UserNotifierMailer.send_signup_email(params[:user_email]).deliver
-      redirect_to "/movies"
+      redirect_to "/"
     else
       render "showtimes/buy.html.erb"
     end
