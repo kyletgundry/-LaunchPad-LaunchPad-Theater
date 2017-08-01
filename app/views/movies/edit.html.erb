@@ -5,9 +5,9 @@
 
 <%= form_tag "/movies/#{@movie.id}", method: :patch do %>
   <div>
-    <label style="padding-right: 10px;">Theater: </label>
-      <select name="theater_name">
+    <select name="theater_name" value="<%= @movie.theater.name %>">
        <% @theaters.each do |theater| %>
+      <label style="padding-right: 10px;">Theater: </label>
          <option><%= theater.name %></option>
        <% end %>
      </select>
