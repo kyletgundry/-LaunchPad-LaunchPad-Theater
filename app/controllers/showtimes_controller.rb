@@ -34,23 +34,11 @@ class ShowtimesController < ApplicationController
   def buy
     @order = Order.new
     @showtime = Showtime.find_by(id: params[:id])
-    puts "This is the showtime id: " + @showtime.id.to_s
-    puts "This is the showtime movie id:  " + @showtime.movie_id.to_s
-    puts "This is the showtime seats available:  " + @showtime.seats_available.to_s
-    puts "This is the movie name:  " + @showtime.movie.name
-    puts "This is the movie id:  " + @showtime.movie.id.to_s
-    puts "This is the movie seats:  " + @showtime.movie.theater.seats.to_s
     render "buy.html.erb"
   end
 
   def order
     @showtime = Showtime.find_by(id: params[:id])
-    puts "This is the showtime id: " + @showtime.id.to_s
-    puts "This is the showtime movie id:  " + @showtime.movie_id.to_s
-    puts "This is the showtime seats available:  " + @showtime.seats_available.to_s
-    puts "This is the movie name:  " + @showtime.movie.name
-    puts "This is the movie id:  " + @showtime.movie.id.to_s
-    puts "This is the movie seats:  " + @showtime.movie.theater.seats.to_s
     @order = Order.new(
       user_name: params[:user_name],
       user_email: params[:user_email],
