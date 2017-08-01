@@ -8,7 +8,7 @@
   <% @movies.each do |movie| %>
     <div class="col-md-4">
       <div class="well">
-        <div><h3><a href="/movies/<%= movie.id %>"><%= movie.name %></a></h3></div>
+        <div><h3>Movie: <a href="/movies/<%= movie.id %>"><%= movie.name %></a></h3></div>
         <div><h5>Theater: <%= movie.theater.name %></h5></div>
           <h6>_________________</h6>
         <% movie.showtimes.each do |showtime| %>
