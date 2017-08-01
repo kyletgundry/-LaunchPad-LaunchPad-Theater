@@ -5,6 +5,8 @@ ActionMailer::Base.smtp_settings = {
   :port => '25',
   :domain => 'example.com',
   :authentication => :plain,
+  :user_name => ENV["USERNAME"],
+  :password => ENV["PASSWORD"]
 }
 
 SendGrid.configure do |config|
