@@ -19,28 +19,28 @@
 
 <h3>Buy Ticket:</h3>
 
-<%= form_tag "/showtimes/#{@showtime.id}/order", method: :post do %>
+<%= form_tag "/showtimes/#{@showtime.id}/buy", method: :post do %>
   <div>
     <label for="user_name">Name: </label>
     <input type="text" name="user_name" value="<%= @order.user_name %>">
   </div>
   <div>
     <label for="user_email">Email: </label>
-    <input type="email" name="user_email">
+    <input type="email" name="user_email" value="<%= @order.user_email %>">
   </div>
   <div>
     <label for="user_credit_card">Credit Card Number:  </label>
-    <input type="text" name="user_credit_card">
+    <input type="text" name="user_credit_card" value="<%= @order.user_credit_card %>">
   </div>
   <div>
     <label for="user_expiration_date">Credit Card Expiration Date:  </label>
-    <input type="text" name="user_expiration_date">
+    <input type="text" name="user_expiration_date" value="<%= @order.user_expiration_date %>">
   </div>
   <div>
     <input type="hidden" name="showtime_id" value="<%= @showtime.id %>">
   </div>
   <div>
-    <input type="hidden" name="movie_id" value="<%= @showtime.movie_id %>">
+    <input type="hidden" name="movie_id" value="<%= @showtime.movie.id %>">
   </div>
   <br>
   <div>
