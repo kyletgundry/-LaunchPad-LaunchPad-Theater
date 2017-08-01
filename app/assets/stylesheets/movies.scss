@@ -1,7 +1,10 @@
 // Place all the styles related to the Movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+body {
+  font-family: 'Bree Serif', serif;
+  background-image: url('symphony.png');
+}
 h1 {
   font-family: 'Poppins', sans-serif;
 }
@@ -11,5 +14,13 @@ h1 {
   border-radius: 2%;
   max-height: 350px;
   min-height: 350px;
+  overflow: scroll;
+}
+
+#show {
+  background-color: white;
+  border-radius: 2%;
+  max-height: 200px;
+  min-height: 200px;
   overflow: scroll;
 }
